@@ -1,15 +1,18 @@
-//revision brute force
+//Better solution using hashmap
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         int n=nums.size();
+        map<int,int>hashmap;
         for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                if(nums[i]+nums[j]==target){
-                    return {i,j};
-                }
+            int needmore=target-nums[i];
+            if(hashmap.find(needmore)!=hashmap.end()){
+                return {hashmap[needmore],i};
+            }
+            else{
+                hashmap[nums[i]]=i;
             }
         }
-
-  return{} ; }
+return{-1,-1};
+    }
 };
