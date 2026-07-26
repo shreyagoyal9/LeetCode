@@ -19,3 +19,22 @@ public:
     return maxsum;    
     }
 };
+
+
+/*if the question asked to print that subarray
+maxsum=INT_MIN;
+sum=0;
+ansStart=-1;
+ansEnd=-1;
+
+for(int i=0;i<n;i++){
+    if(sum==0) start = i;
+    sum=sum+arr[i];
+    if(sum>maxsum){
+    maxsum=sum;
+    ansStart=start,ansEnd=i;
+    }
+    if(sum<0){
+    sum=0;
+    }
+    }*/
