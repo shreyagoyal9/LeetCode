@@ -1,19 +1,20 @@
-//brute force without using any new array 
+//brute force using another array space 
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         int n=nums.size();
-        
-        //iterate through each element 
+        vector<int>temp;
         for(int i=0;i<n;i++){
-            if(nums[i]==0){
-                for(int j=i;j<n;j++){
-                    if(nums[j]!=0){
-                        swap(nums[i],nums[j]);
-                        break;
-                    }
-                }
+            if(nums[i]!=0){
+                temp.push_back(nums[i]);
             }
         }
+        for(int i=0;i<temp.size();i++){
+            nums[i]=temp[i];
+        }
+        for(int i=temp.size();i<n;i++){
+            nums[i]=0;
+        }
+        
     }
 };
